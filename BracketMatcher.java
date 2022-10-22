@@ -24,9 +24,13 @@ class BracketMatcher{
 
 	}
 
-	// public boolean corresponds(char open, char close){
+	/* returns true if the character open is a bracket
+ 	 * that corresponds to the closing bracket close
+ 	 */
 
-	// }
+	public boolean corresponds(char open, char close){
+
+	}
 
 	// public boolean checkBrackets(String s){
 
