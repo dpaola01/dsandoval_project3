@@ -5,6 +5,7 @@ class BracketMatcher{
 	public char[] closingBracket = {')', '}', ']', '>'};
 
 
+	/* returns true if the character c is an opening bracket */
 	public boolean isOpeningBracket(char c){
 		if(c == openingBracket[0] || c == openingBracket[1] || c == openingBracket[2] || c == openingBracket[3]){
 			return true;
@@ -14,6 +15,7 @@ class BracketMatcher{
 		}
 	}
 
+	/* returns true if the character c is a closing bracket */
 	public boolean isClosingBracket(char c){
 		if(c == closingBracket[0] || c == closingBracket[1] || c == openingBracket[2] || c == openingBracket[3]){
 			return true;
@@ -29,11 +31,30 @@ class BracketMatcher{
  	 */
 
 	public boolean corresponds(char open, char close){
+		for(int i =0; i<openingBracket.length; i++){
+			if(openingBracket[i] == open){
+				return true;
+			}
+		}
+		for(int j = 0;j<closingBracket.length; j++){
+			if(closingBracket[j]==close){
+				return true;
+			}
+		}
 
+		return false;
 	}
 
-	// public boolean checkBrackets(String s){
+	public boolean checkBrackets(String s){
+		int stackSize = 50;
+		Stack matchBrack = new Stack(stackSize);
 
-	// }
+		for(int i=0; i<s.length;i++){
+			char c = s[i];
+			if(c.isOpeningBracket){
+				matchBrack.push(c);
+			}
+		}
+	}
 
 }
