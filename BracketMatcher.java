@@ -50,9 +50,12 @@ class BracketMatcher{
 		Stack matchBrack = new Stack(stackSize);
 
 		for(int i=0; i<s.length;i++){
-			char c = s[i];
+			char c = s.charAt(i);
 			if(c.isOpeningBracket){
 				matchBrack.push(c);
+			}
+			else if(matchBrack.isEmpty){
+				return false;
 			}
 		}
 	}
