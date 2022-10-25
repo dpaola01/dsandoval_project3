@@ -34,4 +34,11 @@ public class Stack {
 		return top;
 	}
 
+	public void display() {
+		for(int j=0; j<top; j++){      // for each element,
+			System.out.print(numStack[j] + " ");  // display it
+		}
+		System.out.println("");
+	}
+
 }
