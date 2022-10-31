@@ -17,7 +17,7 @@ class BracketMatcher{
 
 	/* returns true if the character c is a closing bracket */
 	public boolean isClosingBracket(char c){
-		if(c == closingBracket[0] || c == closingBracket[1] || c == openingBracket[2] || c == openingBracket[3]){
+		if(c == closingBracket[0] || c == closingBracket[1] || c == closingBracket[2] || c == closingBracket[3]){
 			return true;
 		}
 		else{
@@ -49,15 +49,28 @@ class BracketMatcher{
 		int stackSize = 50;
 		Stack matchBrack = new Stack(stackSize);
 
-		for(int i=0; i<s.length;i++){
+		for(int i=0; i<s.length();i++){
 			char c = s.charAt(i);
-			if(c.isOpeningBracket){
+			if(isOpeningBracket(c)){
 				matchBrack.push(c);
+				continue;
 			}
-			else if(matchBrack.isEmpty){
+			
+			char check;
+			if(isClosingBracket(c)){
+				check = matchBrack.pop();
+
+				if(corresponds(c, check)){
+					return false;
+				}
+				break;
+			}
+
+			else{
 				return false;
 			}
 		}
-	}
 
+		return (matchBrack.isEmpty());
+	}
 }

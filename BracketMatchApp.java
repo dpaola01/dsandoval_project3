@@ -3,19 +3,27 @@ import java.util.Scanner;
 
 class BracketMatchApp{
 	public static void main(String[] args){
-	// Scanner s = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
 
-	// System.out.println("Input a string: ");
-	// String string = s.nextLine();
+		//int maxSize = 100;            // array size
+		BracketMatcher arr;                // declare a variable of type HighArray
+		arr = new BracketMatcher();
 
-		Stack newStack = new Stack(50);
-		newStack.push(200);
-		newStack.push(230);
-		newStack.push(240);
-		//newStack.pop();
-		newStack.display();
+		System.out.println(arr.isOpeningBracket('['));
+		System.out.println(arr.isClosingBracket(']'));
+		System.out.println(arr.corresponds('[', ']'));
 
-		System.out.println(newStack.size());
+
+		System.out.println("Input a string: ");
+		String string = s.nextLine();
+
+		if(arr.checkBrackets(string)){
+			System.out.println("matches");
+		}
+
+		else{
+			System.out.println("no match");
+		}
 
 	}
 }

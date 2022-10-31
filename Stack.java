@@ -1,28 +1,28 @@
 public class Stack {
 	/* Fields*/
-		private long[] numStack;
+		private char[] numStack;
 		private int top;
 
 	/*constructor and other stack methods go here*/
 
 	public Stack(int max){
 		//head = null;
-		numStack = new long[max];
+		numStack = new char[max];
 		top = 0;
 	}
 
-	public void push(long val){
+	public void push(char val){
 		numStack[top] = val;
 		top ++;
 	}
 
-	public long pop(){
-	 	long temp = numStack[top-1];
+	public char pop(){
+	 	char temp = numStack[top-1];
 	 	top--;
 	 	return temp;
 	}
 
-	public long peek(){
+	public char peek(){
 		return numStack[top-1];
 	}
 
