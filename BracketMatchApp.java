@@ -4,14 +4,13 @@ import java.util.Scanner;
 class BracketMatchApp{
 	public static void main(String[] args){
 		Scanner s = new Scanner(System.in);
-
-		//int maxSize = 100;            // array size
+		
 		BracketMatcher arr;                // declare a variable of type HighArray
 		arr = new BracketMatcher();
 
 		System.out.println(arr.isOpeningBracket('['));
 		System.out.println(arr.isClosingBracket(']'));
-		System.out.println(arr.corresponds('[', ']'));
+		System.out.println(arr.corresponds('[', '}'));
 
 
 		System.out.println("Input a string: ");

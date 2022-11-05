@@ -31,18 +31,31 @@ class BracketMatcher{
  	 */
 
 	public boolean corresponds(char open, char close){
-		for(int i =0; i<openingBracket.length; i++){
+
+		//while loop i == j
+
+		int opeIndex = -1;
+		int closeIndex = -1;
+
+		for(int i=0; i<openingBracket.length; i++){
 			if(openingBracket[i] == open){
-				return true;
+				opeIndex = i;
 			}
 		}
 		for(int j = 0;j<closingBracket.length; j++){
 			if(closingBracket[j]==close){
-				return true;
+				closeIndex = j;
 			}
 		}
 
-		return false;
+		if(closeIndex == opeIndex && opeIndex != -1 && closeIndex != -1){
+			return true;
+		}
+
+		else{
+
+			return false;
+		}
 	}
 
 	public boolean checkBrackets(String s){
@@ -53,21 +66,14 @@ class BracketMatcher{
 			char c = s.charAt(i);
 			if(isOpeningBracket(c)){
 				matchBrack.push(c);
-				continue;
 			}
 			
-			char check;
-			if(isClosingBracket(c)){
-				check = matchBrack.pop();
+			else if(isClosingBracket(c)){
+				char check = matchBrack.pop();
 
-				if(corresponds(c, check)){
+				if(!corresponds(check, c)){
 					return false;
 				}
-				break;
-			}
-
-			else{
-				return false;
 			}
 		}
 
