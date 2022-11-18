@@ -5,14 +5,17 @@ class BracketMatchApp{
 	public static void main(String[] args){
 		Scanner s = new Scanner(System.in);
 		
-		BracketMatcher arr;                // declare a variable of type HighArray
+		BracketMatcher arr; //New bracketMatcher object
 		arr = new BracketMatcher();
 
-		System.out.println(arr.isOpeningBracket('['));
-		System.out.println(arr.isClosingBracket(']'));
-		System.out.println(arr.corresponds('[', '}'));
+		/* Prints below are test code to see if boolean returns true or false
+		 * when I input a close/open bracket. Same with both in one run */
 
+		// System.out.println(arr.isOpeningBracket('['));
+		// System.out.println(arr.isClosingBracket(']'));
+		// System.out.println(arr.corresponds('[', '}'));
 
+		//Acutal user input code to determine if it's a string with matching brackets :)
 		System.out.println("Input a string: ");
 		String string = s.nextLine();
 

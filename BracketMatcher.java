@@ -1,5 +1,6 @@
 class BracketMatcher{
-	//fields go here
+	//Instance fields
+	//Hard coded closing and opening brackets for easier and later usage in BracketMatcher class
 
 	public char[] openingBracket = {'(', '{', '[', '<'};
 	public char[] closingBracket = {')', '}', ']', '>'};
@@ -29,10 +30,7 @@ class BracketMatcher{
 	/* returns true if the character open is a bracket
  	 * that corresponds to the closing bracket close
  	 */
-
 	public boolean corresponds(char open, char close){
-
-		//while loop i == j
 
 		int opeIndex = -1;
 		int closeIndex = -1;
@@ -47,36 +45,31 @@ class BracketMatcher{
 				closeIndex = j;
 			}
 		}
-
 		if(closeIndex == opeIndex && opeIndex != -1 && closeIndex != -1){
 			return true;
 		}
-
 		else{
-
 			return false;
 		}
 	}
 
+	/*Checks if a string has matching brackets 
+	 *returns false if string does not have matching brackets */
 	public boolean checkBrackets(String s){
 		int stackSize = 50;
 		Stack matchBrack = new Stack(stackSize);
-
 		for(int i=0; i<s.length();i++){
 			char c = s.charAt(i);
 			if(isOpeningBracket(c)){
 				matchBrack.push(c);
 			}
-			
 			else if(isClosingBracket(c)){
 				char check = matchBrack.pop();
-
 				if(!corresponds(check, c)){
 					return false;
 				}
 			}
 		}
-
 		return (matchBrack.isEmpty());
 	}
 }

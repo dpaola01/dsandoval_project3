@@ -3,12 +3,11 @@ public class Stack {
 		private char[] numStack;
 		private int top;
 
-	/*constructor and other stack methods go here*/
-
+	//Creating an empty stack with max amount of values.
+	//Constructor- 
 	public Stack(int max){
-		//head = null;
 		numStack = new char[max];
-		top = 0;
+		top = 0; //Top or size of stack
 	}
 
 	public void push(char val){
@@ -16,6 +15,7 @@ public class Stack {
 		top ++;
 	}
 
+	//Made these into char objects since we'll be working with brackets
 	public char pop(){
 	 	char temp = numStack[top-1];
 	 	top--;
