@@ -8,8 +8,6 @@ class BracketMatchApp{
 		BracketMatcher arr;                // declare a variable of type HighArray
 		arr = new BracketMatcher();
 
-		//caca
-
 		System.out.println(arr.isOpeningBracket('['));
 		System.out.println(arr.isClosingBracket(']'));
 		System.out.println(arr.corresponds('[', '}'));
